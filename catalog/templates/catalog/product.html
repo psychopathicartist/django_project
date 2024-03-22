@@ -1,0 +1,24 @@
+{% extends 'catalog/base.html' %}
+{% load mymedia %}
+{% block content %}
+    <div class="container d-flex justify-content-center">
+        <div class = "text-center">
+            <div class="card mb-4 box-shadow" style="max-width: 36rem;">
+                <div class="card-header">
+                    <h2 class="my-0 font-weight-normal">{{ object.name }}</h2>
+                </div>
+                <div class="card-body">
+                    <img src="{% mymedia object.image %}" alt="object.name" width="240" height="240">
+                    <h1 class="card-title pricing-card-title">{{ object.price }} руб</h1>
+                    <h4>Описание:</h4>
+                    <p>{{ object.description }}</p>
+                    <h4>Категория:</h4>
+                    <p> {{ object.category }}</p>
+                    <p>Дата создания {{ object.created_at }}</p>
+                    <p>Дата изменения {{ object.updated_at }}</p>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Купить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
