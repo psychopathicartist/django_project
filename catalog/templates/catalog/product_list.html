@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title">{{ object.price }} руб</h1>
                         <p> {{ object.description }} </p>
-                        <a href="{% url 'catalog:product' object.pk %}" class="btn btn-secondary">Описание</a>
+                        <a href="{% url 'catalog:product_detail' object.pk %}" class="btn btn-secondary">Описание</a>
                         <button type="button" class="btn btn-secondary">Купить</button>
                     </div>
                 </div>
