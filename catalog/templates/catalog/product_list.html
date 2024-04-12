@@ -1,18 +1,32 @@
 {% extends 'catalog/base.html' %}
 {% block content %}
     <div class="container">
+        <div class="col-12">
+            <a href="{% url 'catalog:create' %}" class="btn btn-lg btn-secondary">Добавить продукт</a>
+        </div>
         <div class="row text-center">
             {% for object in object_list %}
             <div class="col-4">
-                <div class="card mb-4 box-shadow" style="height: 300px;">
+                <div class="card mb-4 box-shadow my-3" style="height: 350px;">
                     <div class="card-header">
                         <h4 class="my-0 font-weight-normal">{{ object.name }}</h4>
                     </div>
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title">{{ object.price }} руб</h1>
-                        <p> {{ object.description }} </p>
-                        <a href="{% url 'catalog:product_detail' object.pk %}" class="btn btn-secondary">Описание</a>
-                        <button type="button" class="btn btn-secondary">Купить</button>
+                        <p> {{ object.description|slice:":50" }} ... </p>
+                        {% if object.version %}
+                            <h6>Версия:</h6>
+                            <h5>{{ object.version.version_name }}</h5>
+                        {% else %}
+                            <p>Нет активной версии</p>
+                        {% endif %}
+                    </div>
+                    <div class="card-footer">
+                        <div class="btn-group">
+                            <a href="{% url 'catalog:view' object.pk %}" class="btn btn-dark mr-1">Просмотр</a>
+                            <a href="{% url 'catalog:edit' object.pk %}" class="btn btn-secondary mr-1">Изменение</a>
+                            <a href="{% url 'catalog:delete' object.pk %}" class="btn btn-warning mr-1">Удаление</a>
+                        </div>
                     </div>
                 </div>
             </div>
