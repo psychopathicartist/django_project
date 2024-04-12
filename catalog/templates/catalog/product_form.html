@@ -1,0 +1,48 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+<div class="col-12">
+    <a href="{% url 'catalog:list' %}" class="btn btn-lg btn-secondary">К списку продуктов</a>
+</div>
+<div class="container">
+    <div class = "text-center">
+        <form method="post" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-6">
+                    <div class="card my-3">
+                        <div class="card-header">
+                            Продукт
+                        </div>
+                        <div class="card-body">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-secondary">
+                                {% if object %}
+                                    Сохранить
+                                {% else %}
+                                    Создать
+                                {% endif %}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card my-3">
+                        <div class="card-header">
+                            Версия
+                        </div>
+                        <div class="card-body">
+                            {{ formset.management_form }}
+                            {% for form in formset.forms %}
+                                {{ form.as_p }}
+                                {% if forloop.revcounter0 != 0 %}
+                                    <hr>
+                                {% endif%}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
