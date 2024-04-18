@@ -17,6 +17,7 @@
                     <p>{{ object.description }}</p>
                     <h4>Категория:</h4>
                     <p> {{ object.category }}</p>
+                    <p>Автор: {{ object.author | default:'Без автора' }}</p>
                     <p>Дата создания {{ object.created_at }}</p>
                     <p>Дата изменения {{ object.updated_at }}</p>
                     <button type="button" class="btn btn-lg btn-block btn-outline-secondary">Купить</button>

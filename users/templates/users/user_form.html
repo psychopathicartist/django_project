@@ -1,0 +1,27 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+<div class="col-12">
+    <a href="{% url 'catalog:list' %}" class="btn btn-secondary">На главное меню</a>
+</div>
+<div class="container d-flex justify-content-center">
+    <div class = "text-center">
+        <div class="card" style="width: 24rem;">
+            <div class="card-header">
+                Редактирование профиля
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-secondary">
+                        Сохранить
+                    </button>
+                </form>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'users:new-password' %}" class="btn btn-warning">Сменить пароль</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
