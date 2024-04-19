@@ -29,14 +29,16 @@ class ContactsView(TemplateView):
         return HttpResponseRedirect("/contacts/")
 
 
-class ProductDetailView(DetailView):
+class ProductDetailView(LoginRequiredMixin, DetailView):
     model = Product
+    login_url = reverse_lazy('users:login')
 
 
-class ProductCreateView(CreateView):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('catalog:list')
+    login_url = reverse_lazy('users:login')
 
     def form_valid(self, form):
         self.object = form.save()
