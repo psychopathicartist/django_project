@@ -24,8 +24,10 @@
                     <div class="card-footer">
                         <div class="btn-group">
                             <a href="{% url 'catalog:view' object.pk %}" class="btn btn-dark mr-1">Просмотр</a>
+                            {% if user == object.author or perms.catalog.change_publish_status %}
                             <a href="{% url 'catalog:edit' object.pk %}" class="btn btn-secondary mr-1">Изменение</a>
                             <a href="{% url 'catalog:delete' object.pk %}" class="btn btn-warning mr-1">Удаление</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

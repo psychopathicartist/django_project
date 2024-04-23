@@ -1,0 +1,201 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Бытовая техника",
+      "description": "Электрические механические приборы, которые выполняют некоторые бытовые функции"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Товары для дома",
+      "description": "Товары, производимые для обустройства домашнего быта"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Книги",
+      "description": "Вид печатной продукции, состоящий из сброшюрованных или отдельных листов"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Стиральная машина",
+      "description": "Автономная установка для стирки текстильных изделий",
+      "image": "products/washing_machine.jpg",
+      "category": 1,
+      "price": 10000,
+      "created_at": "2024-03-15",
+      "updated_at": "2024-04-23",
+      "author": null,
+      "is_published": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Микроволновая печь",
+      "description": "Электроприбор, позволяющий совершать разогрев благодаря электромагнитному излучению",
+      "image": "products/microwave_machine.jpg",
+      "category": 1,
+      "price": 3000,
+      "created_at": "2024-03-15",
+      "updated_at": "2024-04-23",
+      "author": 18,
+      "is_published": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Сушилка",
+      "description": "Приспособление для сушки постиранного белья",
+      "image": "products/dryer.jpg",
+      "category": 2,
+      "price": 1000,
+      "created_at": "2024-03-15",
+      "updated_at": "2024-04-23",
+      "author": null,
+      "is_published": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Справочник",
+      "description": "Издание практического назначения с кратким изложением сведений в систематической форме",
+      "image": "products/directory.jpg",
+      "category": 3,
+      "price": 1200,
+      "created_at": "2024-03-15",
+      "updated_at": "2024-04-23",
+      "author": 17,
+      "is_published": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Словарь",
+      "description": "Книга, содержащая перечень слов с пояснениями, толкованиями или переводом на другой язык",
+      "image": "products/dictionary.jpg",
+      "category": 3,
+      "price": 800,
+      "created_at": "2024-03-15",
+      "updated_at": "2024-04-23",
+      "author": null,
+      "is_published": false
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "Атлас",
+      "description": "Систематическое собрание географических карт, выполненное по общей программе как целостное произведение",
+      "image": "products/atlas.jpg",
+      "category": 3,
+      "price": 1000,
+      "created_at": "2024-04-12",
+      "updated_at": "2024-04-23",
+      "author": null,
+      "is_published": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "Ноутбук",
+      "description": "Переносной компьютер, в корпусе которого объединены типичные компоненты персонального компьютера",
+      "image": "",
+      "category": 1,
+      "price": 30000,
+      "created_at": "2024-04-18",
+      "updated_at": "2024-04-23",
+      "author": 17,
+      "is_published": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 1,
+    "fields": {
+      "product": 2,
+      "version_number": 1,
+      "version_name": "Первая и неповторимая",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 2,
+    "fields": {
+      "product": 2,
+      "version_number": 2,
+      "version_name": "Вторая так себе",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 3,
+    "fields": {
+      "product": 1,
+      "version_number": 1,
+      "version_name": "Очень старая",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 4,
+    "fields": {
+      "product": 1,
+      "version_number": 2,
+      "version_name": "Версия поновее",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 5,
+    "fields": {
+      "product": 5,
+      "version_number": 1,
+      "version_name": "Старый словарь",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 6,
+    "fields": {
+      "product": 5,
+      "version_number": 2,
+      "version_name": "Словарь дополненный",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 7,
+    "fields": {
+      "product": 4,
+      "version_number": 1,
+      "version_name": "Первая и единственная",
+      "is_active": true
+    }
+  }
+]

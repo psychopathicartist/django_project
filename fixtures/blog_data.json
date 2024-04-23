@@ -1,0 +1,67 @@
+[
+  {
+    "model": "blog.blogentry",
+    "pk": 8,
+    "fields": {
+      "heading": "Блог о пользе чтения литературы",
+      "slug": "blog-o-polze-chteniya-literaturyi",
+      "content": "Читать очень полезно, это развивает ум и мышление, а также воображение",
+      "image": "blog/reading_books.jpg",
+      "created_at": "2024-03-29",
+      "is_published": true,
+      "views_count": 24
+    }
+  },
+  {
+    "model": "blog.blogentry",
+    "pk": 9,
+    "fields": {
+      "heading": "Блог о правильном питании",
+      "slug": "blog-o-pravilnom-pitanii",
+      "content": "Питайтесь правильно, чтобы поддерживать свое тело и дух",
+      "image": "blog/proper_diet.jpg",
+      "created_at": "2024-03-29",
+      "is_published": true,
+      "views_count": 12
+    }
+  },
+  {
+    "model": "blog.blogentry",
+    "pk": 10,
+    "fields": {
+      "heading": "Блог о полезных привычках",
+      "slug": "blog-o-poleznyih-privyichkah",
+      "content": "Пейте по утрам стакан воды, делайте зарядку",
+      "image": "blog/good_habits.jpg",
+      "created_at": "2024-03-29",
+      "is_published": true,
+      "views_count": 19
+    }
+  },
+  {
+    "model": "blog.blogentry",
+    "pk": 15,
+    "fields": {
+      "heading": "Блог об изучении иностранных языков",
+      "slug": "blog-ob-izuchenii-inostrannyih-yazyikov",
+      "content": "Владение несколькими языками поможет наладить контакт с любым человеком на планете",
+      "image": "",
+      "created_at": "2024-03-29",
+      "is_published": true,
+      "views_count": 2
+    }
+  },
+  {
+    "model": "blog.blogentry",
+    "pk": 16,
+    "fields": {
+      "heading": "Блог ни о чем",
+      "slug": "blog-ni-o-chem",
+      "content": "блаблабла",
+      "image": "",
+      "created_at": "2024-03-29",
+      "is_published": false,
+      "views_count": 0
+    }
+  }
+]
