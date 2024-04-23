@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
 
-from catalog.forms import ProductForm, VersionForm
+from catalog.forms import ProductForm, VersionForm, ProductModeratorForm
 from catalog.models import Product, Version
 
 
@@ -16,6 +16,13 @@ class ProductListView(ListView):
         for product in context_data.get('object_list'):
             product.version = product.version_set.filter(is_active=True).first()
         return context_data
+
+    def get_queryset(self, *args, **kwargs):
+        queryset = super().get_queryset()
+        user = self.request.user
+        if not user.has_perm('catalog.change_publish_status'):
+            queryset = queryset.filter(is_published=True)
+        return queryset
 
 
 class ContactsView(TemplateView):
@@ -78,6 +85,13 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
             formset.save()
 
         return super().form_valid(form)
+
+    def get_form_class(self):
+        user = self.request.user
+        if user == self.object.author:
+            return ProductForm
+        if user.has_perm('catalog.change_publish_status'):
+            return ProductModeratorForm
 
 
 class ProductDeleteView(LoginRequiredMixin, DeleteView):
