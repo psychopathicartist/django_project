@@ -3,6 +3,7 @@
     <div class="container">
         <div class="col-12">
             <a href="{% url 'catalog:create' %}" class="btn btn-lg btn-secondary">Добавить продукт</a>
+            <a href="{% url 'catalog:category_list' %}" class="btn btn-lg btn-secondary">К категориям</a>
         </div>
         <div class="row text-center">
             {% for object in object_list %}
