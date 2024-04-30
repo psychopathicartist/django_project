@@ -14,6 +14,8 @@ pytils = "^0.4.1"
 django = "^4.2"
 django-phonenumber-field = "^7.3.0"
 django-phonenumbers = "^1.0.1"
+redis = "^5.0.4"
+python-dotenv = "^1.0.1"
 
 
 [build-system]
